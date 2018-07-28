@@ -2,12 +2,11 @@
 
 # dependencies
 /node_modules
-/farm
 /static/images/delete
 
 # testing
 /coverage
-
+/pages/institution
 # production
 /build
 /dist
