@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "DavyBello <bellooladipupo41@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "10.1.0",
+    "yarn": "1.6.0"
+  },
   "dependencies": {
     "apollo-boost": "^0.1.10",
     "apollo-link-context": "^1.0.8",
