@@ -1,8 +1,8 @@
 {
-  "name": "nextjs-with-apollo-auth-boilerplate",
+  "name": "pret-app",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "DavyBello <bellooladipupo41@gmail.com>",
+  "author": "AdetonaSunday <papasusnnee@gmail.com>",
   "license": "MIT",
   "engines": {
     "node": "10.1.0",

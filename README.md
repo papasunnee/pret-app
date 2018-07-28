@@ -1,5 +1,6 @@
-# nextjs-with-apollo-auth-boilerplate
-WIP
+# PRET Frontend Application
+
+Altitude Technology
 
 ## The idea behind the example
 
@@ -7,13 +8,13 @@ This is an extention of the _[with Apollo](https://github.com/zeit/next.js/tree/
 
 > [Apollo](http://dev.apollodata.com) is a GraphQL client that allows you to easily query the exact data you need from a GraphQL server. In addition to fetching and mutating data, Apollo analyzes your queries and their results to construct a client-side cache of your data, which is kept up to date as further queries and mutations are run, fetching more results from the server.
 >
-> In this simple example, we integrate Apollo seamlessly with Next by wrapping our *pages* inside a [higher-order component (HOC)](https://facebook.github.io/react/docs/higher-order-components.html). Using the HOC pattern we're able to pass down a central store of query result data created by Apollo into our React component hierarchy defined inside each page of our Next application.
+> In this simple example, we integrate Apollo seamlessly with Next by wrapping our _pages_ inside a [higher-order component (HOC)](https://facebook.github.io/react/docs/higher-order-components.html). Using the HOC pattern we're able to pass down a central store of query result data created by Apollo into our React component hierarchy defined inside each page of our Next application.
 >
-> On initial page load, while on the server and inside `getInitialProps`, we invoke the Apollo method,  [`getDataFromTree`](http://dev.apollodata.com/react/server-side-rendering.html#getDataFromTree). This method returns a promise; at the point in which the promise resolves, our Apollo Client store is completely initialized.
+> On initial page load, while on the server and inside `getInitialProps`, we invoke the Apollo method, [`getDataFromTree`](http://dev.apollodata.com/react/server-side-rendering.html#getDataFromTree). This method returns a promise; at the point in which the promise resolves, our Apollo Client store is completely initialized.
 >
 > This example relies on [graph.cool](https://www.graph.cool) for its GraphQL backend.
 >
-> *Note: If you're interested in integrating the client with your existing Redux store check out the [`with-apollo-and-redux`](https://github.com/zeit/next.js/tree/master/examples/with-apollo-and-redux) example.*
+> _Note: If you're interested in integrating the client with your existing Redux store check out the [`with-apollo-and-redux`](https://github.com/zeit/next.js/tree/master/examples/with-apollo-and-redux) example._
 
 [graph.cool](https://www.graph.cool) can be setup with many different
 [authentication providers](https://www.graph.cool/docs/reference/integrations/overview-seimeish6e/#authentication-providers), the most basic of which is [email-password authentication](https://www.graph.cool/docs/reference/simple-api/user-authentication-eixu9osueb/#email-and-password). Once email-password authentication is enabled for your graph.cool project, you are provided with 2 useful mutations: `createUser` and `signinUser`.
