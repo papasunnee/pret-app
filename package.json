@@ -1,0 +1,37 @@
+{
+  "name": "nextjs-with-apollo-auth-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "DavyBello <bellooladipupo41@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-boost": "^0.1.10",
+    "apollo-link-context": "^1.0.8",
+    "apollo-link-http": "^1.5.4",
+    "babel-plugin-inline-dotenv": "^1.1.2",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "bv-react-svgloader": "^1.1.0",
+    "cookie": "^0.3.1",
+    "graphql": "^0.13.2",
+    "isomorphic-unfetch": "^2.0.0",
+    "material-ui": "^0.20.1",
+    "next": "^6.1.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-apollo": "^2.1.9",
+    "react-dom": "^16.4.1",
+    "react-swipeable-views": "^0.12.15",
+    "react-toastify": "^4.1.0",
+    "react-youtube": "^7.6.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "start-win": "next start",
+    "heroku-postbuild": "next build"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0"
+  }
+}

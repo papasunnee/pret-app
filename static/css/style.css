@@ -1,0 +1,452 @@
+html,
+body {
+  font-size: 100%;
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+.themeColor {
+  color: #13828f !important;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+h2 {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-size: 2.25em;
+  margin: 10px auto;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+.container .main {
+  margin: auto;
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.7em;
+}
+.displayFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
+section {
+  margin: 50px auto;
+}
+main {
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+}
+nav a.navbar-brand {
+  vertical-align: middle;
+}
+
+nav ul {
+  border-radius: 50px;
+  display: flex;
+  padding: 15px;
+  -webkit-box-shadow: 3px 2px 14px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 2px 14px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 2px 14px 0px rgba(0, 0, 0, 0.3);
+}
+nav ul li a {
+  padding: 20px;
+  transition: all 150ms ease-in-out;
+}
+
+nav ul li a:hover,
+.navigateSection a:hover {
+  color: #669c55;
+}
+.enterCandidate,
+.enterEmployer {
+  position: relative;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.enterCandidate {
+  border: 1px solid #2a7c11;
+  background: -moz-linear-gradient(
+    19deg,
+    rgba(48, 143, 19, 1) 0%,
+    rgba(48, 143, 19, 1) 2%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* ff3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0%, rgba(48, 143, 19, 1)),
+    color-stop(2%, rgba(48, 143, 19, 1)),
+    color-stop(100%, rgba(21, 140, 83, 1))
+  ); /* safari4+,chrome */
+  background: -webkit-linear-gradient(
+    19deg,
+    rgba(48, 143, 19, 1) 0%,
+    rgba(48, 143, 19, 1) 2%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(
+    19deg,
+    rgba(48, 143, 19, 1) 0%,
+    rgba(48, 143, 19, 1) 2%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* opera 11.10+ */
+  background: -ms-linear-gradient(
+    19deg,
+    rgba(48, 143, 19, 1) 0%,
+    rgba(48, 143, 19, 1) 2%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* ie10+ */
+  background: linear-gradient(
+    71deg,
+    rgba(48, 143, 19, 1) 0%,
+    rgba(48, 143, 19, 1) 2%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* w3c */
+}
+.enterEmployer {
+  border: 1px solid #117681;
+  background: -moz-linear-gradient(
+    19deg,
+    rgba(19, 130, 143, 1) 0%,
+    rgba(19, 130, 143, 1) 1%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* ff3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0%, rgba(19, 130, 143, 1)),
+    color-stop(1%, rgba(19, 130, 143, 1)),
+    color-stop(100%, rgba(21, 140, 83, 1))
+  ); /* safari4+,chrome */
+  background: -webkit-linear-gradient(
+    19deg,
+    rgba(19, 130, 143, 1) 0%,
+    rgba(19, 130, 143, 1) 1%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(
+    19deg,
+    rgba(19, 130, 143, 1) 0%,
+    rgba(19, 130, 143, 1) 1%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* opera 11.10+ */
+  background: -ms-linear-gradient(
+    19deg,
+    rgba(19, 130, 143, 1) 0%,
+    rgba(19, 130, 143, 1) 1%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* ie10+ */
+  background: linear-gradient(
+    71deg,
+    rgba(19, 130, 143, 1) 0%,
+    rgba(19, 130, 143, 1) 1%,
+    rgba(21, 140, 83, 1) 100%
+  ); /* w3c */
+}
+
+.enterCandidate::before,
+.enterEmployer::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.103);
+  transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 0;
+}
+
+.enterCandidate:hover::before,
+.enterEmployer:hover::before {
+  width: 100%;
+}
+.enterCandidate h1 span,
+.enterEmployer h1 span {
+  display: block;
+  font-weight: 100;
+  z-index: 2;
+}
+main div.leftpane {
+  flex-basis: 50%;
+  margin-right: 100px;
+}
+main div.enter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+main div.enter .shadow {
+  box-shadow: 20px -20px #13828f;
+}
+.moreContent {
+  height: 500px;
+}
+.navigateSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+section div.navigateSection ul li a {
+  padding-top: 30px;
+  display: block;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 100% auto;
+  position: relative;
+  background-image: url("/static/images/sectionbg.jpg");
+  -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  padding-top: 200px;
+}
+.wrapper .displayFlex {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.componentOfPret {
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #13828f;
+}
+.componentOfPret h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+.componentOfPret span {
+  color: #fbff3c;
+  font-size: 1.5em;
+  display: block;
+}
+.componentOfPret p {
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+  text-align: justify;
+}
+
+.captionMessage {
+  position: relative;
+  width: 450px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  color: #3b3b3b;
+  border-radius: 5px;
+  background-color: rgba(251, 255, 60, 0.7);
+}
+.captionMessage p {
+  font-size: 25px;
+  line-height: 1.5em;
+}
+.captionMessage p::after,
+.captionMessage p::before {
+  content: '"';
+  font-size: 3.5em;
+  font-style: italic;
+}
+.captionMessage p::after {
+  float: right;
+  margin-top: 30px;
+}
+.readMore {
+  background-color: red;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 20px;
+  padding: 10px 35px;
+  box-sizing: border-box;
+}
+
+.takePretTest {
+  color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px 35px;
+  box-sizing: border-box;
+  transition: all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  border: 1px solid #669c56;
+}
+
+.takePretTest:hover {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: #2a7c11;
+}
+
+.takePretTest,
+.blockBg {
+  background: linear-gradient(148deg, #138f4b, #13828f);
+  -webkit-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+.contactForm {
+  justify-content: space-between;
+}
+.contactForm > * {
+  flex: 0 1 48%;
+}
+
+.contactForm form {
+  display: flex;
+  flex-flow: column;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 56%;
+  }
+  50% {
+    background-position: 100% 45%;
+  }
+  100% {
+    background-position: 0% 56%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 56%;
+  }
+  50% {
+    background-position: 100% 45%;
+  }
+  100% {
+    background-position: 0% 56%;
+  }
+}
+
+footer {
+  box-sizing: border-box;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  background-image: url("/static/images/city.svg");
+}
+footer ul {
+  display: flex;
+  width: 500px;
+  margin: 30px auto;
+  margin-bottom: 0;
+  padding: 0;
+  justify-content: space-between;
+}
+footer ul li {
+  margin: 0 !important;
+  display: block;
+}
+
+footer ul li a {
+  font-size: 0.6em;
+  padding: 10px;
+}
+footer p {
+  font-size: 0.9em;
+}
+footer p a {
+  color: #ff0000;
+}
+
+@media (max-width: 440px) {
+  main {
+    display: block;
+  }
+  .enterCandidate,
+  .enterEmployer {
+    padding: 20px;
+    width: 80%;
+    margin: 40px auto;
+  }
+}
+@media (min-width: 440px) and (max-width: 768px) {
+  main {
+    display: block;
+  }
+  .enterCandidate,
+  .enterEmployer {
+    padding: 20px;
+    width: 80%;
+    margin: 40px auto;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  /* .displayFlex {
+    display: block;
+    width: 100%;
+  } */
+}
+@media (max-width: 714px) {
+  nav ul {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  main .displayFlex {
+    display: block;
+  }
+  main .displayFlex > * {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
