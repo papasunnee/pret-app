@@ -12,7 +12,7 @@ class SampleQuestionPage extends Component{
         return(
             <Fragment>
                 <Head>
-                    <title>PRET :: Sample Question</title>
+                    <title>PRET :: Sample Questions</title>
                     <meta charSet='utf-8' />
                     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
                 </Head>
@@ -21,7 +21,7 @@ class SampleQuestionPage extends Component{
                 <div className="container">
                     <main>
                         <div>
-                            <h2 className="themeColor">Sample Question</h2>
+                            <h2 className="themeColor">Sample Questions</h2>
                             <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                             </p>

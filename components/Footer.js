@@ -13,7 +13,7 @@ export default (props) => {
                 <li><a href="#">Disclaimer</a></li>
             </ul>
             <p>
-                &copy; 2018 PRET. All Right Reserved | Powered by <a target="_blank" href="www.altitude-tech.com">Altitude Technology</a>
+                &copy; 2018 PRET. All Right Reserved | Powered by <a target="_blank" href="http://www.altitude-tech.com">Altitude Technology</a>
             </p>
         </footer>
     )
