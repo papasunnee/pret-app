@@ -64,6 +64,7 @@ export default function withLayout(Child, opts={}) {
             <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
             <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
             <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+            <link rel="shortcut icon" type="image/x-icon" href="/static/images/fav.ico"/>
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" type="text/css" media="all" />
             <meta charSet="utf-8"/>
           </Head>
