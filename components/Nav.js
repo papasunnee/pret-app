@@ -70,9 +70,6 @@ export default class Nav extends Component {
                                 </Fragment>
                             )}
                         </LoginModalContext.Consumer>
-                        {/* <Link prefetch href="#!">
-                            <LoginDialog fullScreen={false} />
-                        </Link> */}
                     </li>
                 </ul>
             </nav>        

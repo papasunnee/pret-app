@@ -1,5 +1,9 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import Link from 'next/link'
+import {ApolloConsumer} from 'react-apollo'
+import LoginModal from './LoginModal'
+import { LoginModalContext } from '../contexts/LoginModalContext'
+import { USER_ISAUTHENTICATED_QUERY } from '../lib/graphql/queries'
 
 export default (props) => {
         return(
@@ -28,9 +32,35 @@ export default (props) => {
                         </Link>
                     </li>
                     <li>
-                        <Link prefetch href="/logout">
-                            <a>Logout</a>
-                        </Link>
+                    <LoginModalContext.Consumer>{
+                            ({open, toggleModal}) => (
+                                <Fragment>
+                                <LoginModal isOpen={open} close={toggleModal} />
+                                <ApolloConsumer>
+                                    {client => (
+                                    <a href="#!"
+                                        onClick={async () => {
+                                        const { data : { userIsAuthenticated } } = await client.query({query: USER_ISAUTHENTICATED_QUERY});
+                                        if (userIsAuthenticated) {
+                                            console.log('isAuth - fetching cookies');
+                                            const {userType, token} = cookie.parse(document.cookie)
+                                            if (userType && token) {
+                                                let target = `/user/dashboard`;
+                                                userType == 'PretCandidate' && (target=`/user/dashboard`);
+                                                userType == 'Institution' && (target=`/institution/dashboard`);
+                                                redirect({}, target)
+                                            } else {
+                                            toggleModal();
+                                            }
+                                        } else {
+                                            toggleModal();
+                                        }
+                                        }}>Login</a>
+                                    )}
+                                    </ApolloConsumer>
+                                </Fragment>
+                            )}
+                        </LoginModalContext.Consumer>
                     </li>
                 </ul>
                 <ul>
