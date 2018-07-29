@@ -54,25 +54,10 @@ export default class Nav extends Component {
                                             console.log('isAuth - fetching cookies');
                                             const {userType, token} = cookie.parse(document.cookie)
                                             if (userType && token) {
-                                            console.log(userType);
-                                            // if (userType == 'Candidate') {
-                                            //   Router.push('/user/dashboard');
-                                            // } else if (userType == 'Institution') {
-                                            //   Router.push('/institution/dashboard');
-                                            // } else if (userType == 'MccAffiliate') {
-                                            //   Router.push('/affiliate/dashboard');
-                                            // } else {
-                                            //   toggleModal();
-                                            // }
-                                            // client.resetStore().then(() => {
-                                            //   // console.log('isAuth - redirecting');
-                                            //   // const target = this.props.url.query.from || `/user/dashboard`;
-                                            // })
-                                            let target = `/user/dashboard`;
-                                            userType == 'PretCandidate' && (target=`/user/dashboard`);
-                                            userType == 'Institution' && (target=`/institution/dashboard`);
-                                            //userType == 'MccAffiliate' && (target=`/affiliate/dashboard`);
-                                            redirect({}, target)
+                                                let target = `/user/dashboard`;
+                                                userType == 'PretCandidate' && (target=`/user/dashboard`);
+                                                userType == 'Institution' && (target=`/institution/dashboard`);
+                                                redirect({}, target)
                                             } else {
                                             toggleModal();
                                             }

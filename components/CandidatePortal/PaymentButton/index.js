@@ -51,9 +51,9 @@ export default class PaymentButton extends Component {
 		const data = cache.readQuery({ query: PAYMENT_PAGE_QUERY });
 
 		// Add the new education to PAYMENT_PAGE_QUERY
-		data.viewerPretCandidate.candidate.payments = [
+		data.viewerCandidate.candidate.payments = [
 			candidateFindOrCreatePaymentRecord,
-			...data.viewerPretCandidate.candidate.payments
+			...data.viewerCandidate.candidate.payments
 		];
 
 		// Write our data back to the cache.

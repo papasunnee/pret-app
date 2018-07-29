@@ -36,7 +36,7 @@ class CandidateDetailsWrapper extends Component {
           return `There was an error contacting the server`;
         }
 
-        const { viewerPretCandidate: { candidate } } = data;
+        const { viewerCandidate: { candidate } } = data;
         //console.log(candidate);
         return (
           <CandidateDetailsContext.Provider value={{candidate}}>
