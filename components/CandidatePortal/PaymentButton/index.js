@@ -6,8 +6,8 @@ import { Mutation } from 'react-apollo';
 import { CREATE_PAYMENT_MUTATION } from '../../../lib/graphql/mutations'
 import { PAYMENT_PAGE_QUERY } from '../../../lib/graphql/queries'
 
-const PAYSTACK_PUBLIC_KEY = 'pk_test_43f8936830aea3a5b9838c4893b16c9f1e7dee34';
-// const PAYSTACK_PUBLIC_KEY = 'pk_live_ec169fc011a4a8a16544c851b69a5c89571f46a7 ';
+//const PAYSTACK_PUBLIC_KEY = 'pk_test_43f8936830aea3a5b9838c4893b16c9f1e7dee34';
+const PAYSTACK_PUBLIC_KEY = 'pk_live_ec169fc011a4a8a16544c851b69a5c89571f46a7 ';
 
 export default class PaymentButton extends Component {
 

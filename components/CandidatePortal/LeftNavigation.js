@@ -17,7 +17,6 @@ export default class LeftNavigation extends Component{
 
     render(){
         return<div>
-        <div>
             <div>
                 <CandidateDetailsContext.Consumer>{
                   ({ candidate: { name } }) => <Fragment>
@@ -30,8 +29,7 @@ export default class LeftNavigation extends Component{
                     Candidate
                 </h4>
             </div>
-
-            <div className="profile-usermenu">
+            <div className="leftNav">
                 <ul>
                     <li className={this.props.activePage=='/' ? "active" : ""} >
                       <Link prefetch href="/user/dashboard">
@@ -44,23 +42,28 @@ export default class LeftNavigation extends Component{
                         </Link>
                     </li>
                     <li className={this.props.activePage=='/test' ? "active" : ""}>
-                        <Link prefetch href="/user/mcc-test-code">
+                        <Link prefetch href="/user/pret-test-code">
                           <a>PRET Test Code </a>
                         </Link>
                     </li>
-                    <li className={this.props.activePage=='/career-coach' ? "active" : ""}>
-                        <Link prefetch href="/user/career-coach">
-                        <a>Career Coach</a>
+                    <li className={this.props.activePage=='/upload-cv' ? "active" : ""}>
+                        <Link prefetch href="/user/upload-cv">
+                        <a>Upload CV</a>
+                        </Link>
+                    </li>
+                    <li className={this.props.activePage=='/schedule-test' ? "active" : ""}>
+                        <Link prefetch href="/user/schedule-test">
+                        <a>Schedule Test</a>
+                        </Link>
+                    </li>
+                    <li className={this.props.activePage=='/receipt' ? "active" : ""}>
+                        <Link prefetch href="/user/receipt">
+                        <a>Receipt</a>
                         </Link>
                     </li>
                     <li>
                       <a href="/" target="_blank">
                         Link To Website
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/faq">
-                        Help/ FAQ
                       </a>
                     </li>
                     <li>
@@ -84,15 +87,11 @@ export default class LeftNavigation extends Component{
                             redirect({}, '/')
                           })
                         }}>
-                        <i className="glyphicon glyphicon-log-out"></i>
                         Logout </a>
                       }</ApolloConsumer>
                     </li>
                 </ul>
             </div>
-
-        </div>
-
         </div>
     }
 }

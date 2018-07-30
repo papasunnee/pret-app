@@ -5,12 +5,11 @@ import withCandidatePortal from '../../hoc/candidate/withCandidatePortal'
 import PaymentButton from '../../components/CandidatePortal/PaymentButton'
 
 import Checkbox from 'material-ui/Checkbox';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-
+import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
+import SvgLoader from 'bv-react-svgloader'
 import { CandidatePaymentsWrapper, CandidatePaymentsContext } from '../../contexts/CandidatePaymentsContext'
+import { CandidateDetailsContext } from '../../contexts/CandidateDetailsContext'
+import TextField from 'material-ui/TextField'
 
 
 const styles = {
@@ -25,8 +24,9 @@ class PaymentPage extends Component{
 
         this.state = {
           value: 10,
-          email: 'bellooladipupo41@gmail.com',
-          amount: 100*100, // equals 100NGN
+          //email: 'bellooladipupo41@gmail.com',
+          //amount: 100*100, // equals 100NGN
+          coupon : '',
           checked: false
         };
     }
@@ -44,48 +44,52 @@ class PaymentPage extends Component{
       this.setState({value});
     };
     render(){
-        return <div className="profile-content">
-          <CandidatePaymentsWrapper>
-            <div style={{backgroundColor:'white'}}>
-              <h2>Payment Page</h2><hr/>
-              <p>
-                The unit price for PRET test is US$20. </p>
+        return <div>
+        <CandidatePaymentsWrapper>
+          <CandidateDetailsContext.Consumer>{({price, candidate})=>{
+              const payPrice = price.pretPrice*100 //convert to kobo for payStack
+              const displayPrice = `${price.symbol}${price.pretPrice}${price.symbol ? '' : price.currency}`
+              const cancelPrice = `${price.symbol}${price.pretPrice*2}${price.symbol ? '' : price.currency}`
+              return (<Fragment>
+              <div style={{padding: '20px'}}>
+                <h2>Payment Page</h2><hr/>
+                <p>
+                  The unit price for PRET test is {displayPrice}. 
+                </p>
                 <p>We currently do NOT have facilities to handle cash payments. Please read
-                our “Terms of Use” of PRET before you proceed.
-              </p>
-              <div>
-              <Card style={{margin: 'auto', background: 'rgba(255,242,0,0.2)'}}>
-                  <CardTitle title="Purchase My Career Choice Test Code" subtitle="A service of Career Intelligence" />
-                  <div className="row" style={{padding : '10px'}}>
-                    <div className="col-md-6" style={{textAlign: 'center'}}>
-                      <img src="/static/images/product.jpg" style={{width:"80%", border:'1px solid #b2b2b2', margin: 'auto' }} />
-                    </div>
-                    <div className="col-md-6">
+                  our “Terms of Use” of PRET before you proceed.
+                </p>
+                <div style={{textAlign: 'center'}}>
+                  <SvgLoader src='/static/images/pret-logo-small.svg' className="svg-logo"/>
+                </div>
+                  <CardTitle title="Purchase Pre-employment Test Code" subtitle="A service of Career Intelligence" />
                     <CardText>
-                      <h3>PRET Test Code</h3>
-                      <span className="subtitle" style={{textDecoration:'italics'}}>Know the career that suits your personality in 15 minutes for </span>
-                      <span style={{letterSpacing:'2px',color:'#b2b2b2',textDecoration:'line-through', fontSize: '1.5em'}}>$20.00</span>
-                      <span style={{letterSpacing:'2px',fontWeight:'bold', fontSize: '1.5em'}}>$10.00</span>
-                      <CardActions>
-                      <Checkbox
-                        label="I agree to our terms and conditions of PRET service"
-                        checked={this.state.checked}
-                        onCheck={this.updateCheck.bind(this)}
-                        style={styles.checkbox}
-                      />
-                      <PaymentButton email={this.state.email} amount={this.state.amount}/>
-                      </CardActions>
-                    </CardText>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </div>
-            <div>
-               
-            </div>
-              <CandidatePaymentsContext.Consumer>{
-                ({ payments }) => <Fragment>
+                      <div style={{textAlign:'center'}}>
+                        <p>Unit Price for PRET Code</p>
+                        <p style={{margin:'0',border:'1px solid #B24771',letterSpacing:'2px',fontWeight:'bold', fontSize: '3em',color: '#308F13'}}>{displayPrice}</p><br/>
+                        <p style={{padding:'0',margin:'0',letterSpacing:'2px',color:'#B24771',textDecoration:'line-through', fontSize: '1.8em'}}>{cancelPrice}</p>
+                      </div>
+                      
+                        <TextField
+                          hintText="Coupon Code (if available)"
+                          onChange={e=>this.setState({coupon: e.target.value})}
+                        />
+                        <Checkbox
+                          label={<span>I agree to the <a href="/faqs">terms and conditions</a> of PRET service</span>}
+                          checked={this.state.checked}
+                          onCheck={this.updateCheck.bind(this)}
+                          style={styles.checkbox}
+                        />
+                        <PaymentButton
+                          coupon={this.state.coupon}
+                          email={candidate.email}
+                          amount={payPrice}
+                          priceId={price._id}
+                          disabled={!this.state.checked}/>
+                        </CardText>
+                      </div>
+                <CandidatePaymentsContext.Consumer>{
+                  ({ payments }) => <Fragment>
                   <div>
                     <h3>Payment History</h3><hr/>
                     {payments.map(payment=>(
@@ -96,53 +100,9 @@ class PaymentPage extends Component{
                   </div>
                 </Fragment>
               }</CandidatePaymentsContext.Consumer>
+              </Fragment>
+            )}}</CandidateDetailsContext.Consumer>
           </CandidatePaymentsWrapper>
-          <style jsx>{`
-            span{
-              display : block ;
-            }
-            span.subtitle{
-              font-size: 14px;
-              color: rgba(0, 0, 0, 0.541176);
-              display: block;
-            }
-            p{
-              font-size: 12px ;
-            }
-            .displayFlex{
-              justify-content : space-around ;
-          }
-          .displayFlex > * {
-              flex: 0 1 40%;
-              border : 1px solid #b2b2b2 ;
-              box-sizing : border-box ;
-              padding : 20px ;
-              border-radius : 5px ;
-              margin-bottom : 30px ;
-          }
-          .displayFlex a{
-              display : block ;
-              color : #fff ;
-              border-radius : 50px ;
-              padding : 5px 10px ;
-              background: -moz-linear-gradient(57deg, rgba(48,143,19,1) 0%, rgba(19,134,84,1) 60%, rgba(0,128,128,1) 100%);
-              background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(48,143,19,1)), color-stop(60%, rgba(19,134,84,1)), color-stop(100%, rgba(0,128,128,1)));
-              background: -webkit-linear-gradient(57deg, rgba(48,143,19,1) 0%, rgba(19,134,84,1) 60%, rgba(0,128,128,1) 100%);
-              background: -o-linear-gradient(57deg, rgba(48,143,19,1) 0%, rgba(19,134,84,1) 60%, rgba(0,128,128,1) 100%);
-              background: -ms-linear-gradient(57deg, rgba(48,143,19,1) 0%, rgba(19,134,84,1) 60%, rgba(0,128,128,1) 100%);
-              background: linear-gradient(33deg, rgba(48,143,19,1) 0%, rgba(19,134,84,1) 60%, rgba(0,128,128,1) 100%);
-              text-align : center ;
-              width : 70px ;
-              right : 0px ;
-              font-size : 12px ;
-              position : relative ;
-              border : none ;
-              transition : color linear 150ms ;
-          }
-          .displayFlex a:hover{
-              color : #000 ;
-          } 
-        `}</style>
         </div>
     }
 }

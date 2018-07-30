@@ -1,0 +1,6 @@
+[0730/130319.682:ERROR:crash_report_database_win.cc(569)] CreateDirectory C:\Program Files (x86)\Google\Chrome\reports: Access is denied. (0x5)
+[0730/130319.689:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[0730/130319.691:ERROR:crash_report_database_win.cc(569)] CreateDirectory C:\Program Files (x86)\Google\Chrome\reports: Access is denied. (0x5)
+[0730/130323.719:ERROR:crash_report_database_win.cc(569)] CreateDirectory C:\Program Files (x86)\Google\Chrome\reports: Access is denied. (0x5)
+[0730/130323.724:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[0730/130323.726:ERROR:crash_report_database_win.cc(569)] CreateDirectory C:\Program Files (x86)\Google\Chrome\reports: Access is denied. (0x5)
