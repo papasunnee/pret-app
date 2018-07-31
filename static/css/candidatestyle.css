@@ -41,6 +41,36 @@ body {
   color: white;
   margin-bottom: 15px;
 }
+.success {
+  padding: 20px;
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(3, 77, 51, 1) 0%,
+    rgba(6, 140, 104, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(3, 77, 51, 1) 0%,
+    rgba(6, 140, 104, 1) 100%
+  );
+  background: -o-linear-gradient(
+    45deg,
+    rgba(3, 77, 51, 1) 0%,
+    rgba(6, 140, 104, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    45deg,
+    rgba(3, 77, 51, 1) 0%,
+    rgba(6, 140, 104, 1) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(3, 77, 51, 1) 0%,
+    rgba(6, 140, 104, 1) 100%
+  );
+  color: white;
+  margin-bottom: 15px;
+}
 
 .resend-mail {
   float: right;

@@ -99,7 +99,7 @@ export default function withLayout(Child, opts={}) {
                             </div>
                           )
                         } else{
-                          return(<div className="alert" style={{textAlign: 'center'}}>
+                          return(<div className="success" style={{textAlign: 'center'}}>
                             <strong>PRET</strong> Ensures you are shorlisted for interview when there are jobs that requires your skills.
                           </div>
                           )
