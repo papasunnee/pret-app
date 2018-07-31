@@ -1,20 +1,14 @@
-import React from 'react';
-
-import Dialog from 'material-ui/Dialog';
-import RaisedButton from 'material-ui/RaisedButton';
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import getMuiTheme from 'material-ui/styles/getMuiTheme' ;
-import TextField from 'material-ui/TextField';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import {Tabs, Tab} from 'material-ui/Tabs';
-import SwipeableViews from 'react-swipeable-views';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
-import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar'
-
+import React from 'react'
+import Dialog from 'material-ui/Dialog'
+import RaisedButton from 'material-ui/RaisedButton'
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
+import getMuiTheme from 'material-ui/styles/getMuiTheme' 
+import TextField from 'material-ui/TextField'
+import SelectField from 'material-ui/SelectField'
+import MenuItem from 'material-ui/MenuItem'
+import {Tabs, Tab} from 'material-ui/Tabs'
+import SwipeableViews from 'react-swipeable-views'
 import { LoginModalContext } from '../../contexts/LoginModalContext'
-
 import LoginButton from './LoginButton'
 import RegisterButton from './RegisterButton'
 
@@ -76,7 +70,7 @@ export default class CandidateModal extends React.Component {
 
   showLoginError = (message) => {
     this.setState({loginErrorText: message})
-    setTimeout(()=>{ this.setState({loginErrorText: ''}) },5*1000)
+    setTimeout(()=>{ this.setState({loginErrorText: ''}) },10*1000)
   }
   showLoginMessage = (message) => {
     this.setState({loginSuccessText: message})
@@ -146,8 +140,8 @@ export default class CandidateModal extends React.Component {
                     >
                       <div style={styles.slide}>
                         <TextField
-                          underlineFocusStyle={{borderColor: "#0c6053"}}
-                          floatingLabelFocusStyle={{color: "#0c6053"}}
+                          underlineFocusStyle={{borderColor: "#26985E"}}
+                          floatingLabelFocusStyle={{color: "#26985E"}}
                           fullWidth={true}
                           // errorText={this.state.usernameError}
                           value={this.state.username}
@@ -156,8 +150,8 @@ export default class CandidateModal extends React.Component {
                           type="text"
                         />
                         <TextField
-                          underlineFocusStyle={{borderColor: "#0c6053"}}
-                          floatingLabelFocusStyle={{color: "#0c6053"}}
+                          underlineFocusStyle={{borderColor: "#26985E"}}
+                          floatingLabelFocusStyle={{color: "#26985E"}}
                           fullWidth={true}
                           value={this.state.password}
                           onChange={(e) => this.setState({password : e.target.value})}
@@ -166,26 +160,17 @@ export default class CandidateModal extends React.Component {
                           type="password"
                         />
                         {this.state.loginErrorText && (
-                          <p className='login-error-text'>{this.state.loginErrorText}</p>
+                          <p className='login-error-text'><strong>ERROR: </strong>{this.state.loginErrorText}</p>
                         )}
                         {this.state.loginSuccessText && (
-                          <p className='login-success-text'>{this.state.loginSuccessText}</p>
+                          <p className='login-success-text'><strong>SUCCESS: </strong>{this.state.loginSuccessText}</p>
                         )}
 
-
-
-                        {/* <FloatingActionButton mini={true} style={style}>
-                          <ContentAdd />
-                        </FloatingActionButton>
-
-                        <FloatingActionButton mini={true} secondary={true} style={style}>
-                          <ContentAdd />
-                        </FloatingActionButton> */}
                       </div>
                       <div style={styles.slide}>
                         <TextField
-                          underlineFocusStyle={{borderColor: "#0c6053"}}
-                          floatingLabelFocusStyle={{color: "#0c6053"}}
+                          underlineFocusStyle={{borderColor: "#268C95"}}
+                          floatingLabelFocusStyle={{color: "#268C95"}}
                           style={styles.textfield}
                           // hintText={registerType == 0 ? 'e.g John Doe' : registerType == 1 ? 'e.g Google'  : 'Adviser Fullname'}
                           fullWidth={true}
@@ -196,8 +181,8 @@ export default class CandidateModal extends React.Component {
                           type="text"
                         />
                         <TextField
-                          underlineFocusStyle={{borderColor: "#0c6053"}}
-                          floatingLabelFocusStyle={{color: "#0c6053"}}
+                          underlineFocusStyle={{borderColor: "#268C95"}}
+                          floatingLabelFocusStyle={{color: "#268C95"}}
                           // hintText="example@gmail.com"
                           fullWidth={true}
                           errorText=''
@@ -207,8 +192,8 @@ export default class CandidateModal extends React.Component {
                           type="text"
                         />
                         <TextField
-                          underlineFocusStyle={{borderColor: "#0c6053"}}
-                          floatingLabelFocusStyle={{color: "#0c6053"}}
+                          underlineFocusStyle={{borderColor: "#268C95"}}
+                          floatingLabelFocusStyle={{color: "#268C95"}}
                           // hintText="Password"
                           fullWidth={true}
                           value={this.state.regPassword}
