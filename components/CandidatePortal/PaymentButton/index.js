@@ -18,6 +18,13 @@ export default class PaymentButton extends Component {
 		message: ''
 	}
 
+	componentDidMount(){
+		let paystackInline = document.createElement('script')
+		paystackInline.src = 'https://js.paystack.co/v1/inline.js'
+
+    document.getElementById('paystack-script').appendChild(paystackInline)
+	}
+
 	callback = (response, runMutation) => {
 		// console.log(response); // card charged successfully, get reference here
 		this.setState({message: ''})
@@ -68,7 +75,7 @@ export default class PaymentButton extends Component {
     return (
       // <div onClick={()=>this.setState({message: 'Contacting payment server please wait!'})}>
       <div>
-        <script src="https://js.paystack.co/v1/inline.js"></script>
+				<div id="paystack-script"/>
 				<Mutation mutation={CREATE_PAYMENT_MUTATION}
 					update={this.onMutationCompleted}
 					onError={(error) => {
