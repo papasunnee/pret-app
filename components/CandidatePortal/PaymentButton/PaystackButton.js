@@ -61,7 +61,7 @@ class PayStack extends Component {
 
 		try {
 			//TODO Romove next two lines
-			// console.log(paystackOptions);
+			console.log(paystackOptions);
 			const handler = window.PaystackPop.setup(paystackOptions);
 			if (!this.props.embed) {
 				handler.openIframe();
