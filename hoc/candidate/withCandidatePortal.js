@@ -115,6 +115,7 @@ export default function withLayout(Child, opts={}) {
                       <Child />
                     </div>
                   </div>
+                  <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=3WM1WzVbJNVQhn75QDxKtBNHGaRcFYsuwzHuinwVeSr2bnnikIC1HRf9Nqlr"></script></span>
             </div>
           </CandidateDetailsWrapper>
         <ToastContainer />

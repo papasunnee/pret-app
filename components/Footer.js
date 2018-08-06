@@ -15,6 +15,7 @@ export default (props) => {
             <p>
                 &copy; 2018 PRET. All Right Reserved | Powered by <a target="_blank" href="http://www.altitude-tech.com">Altitude Technology</a>
             </p>
+            <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=3WM1WzVbJNVQhn75QDxKtBNHGaRcFYsuwzHuinwVeSr2bnnikIC1HRf9Nqlr"></script></span>
         </footer>
     )
 }
