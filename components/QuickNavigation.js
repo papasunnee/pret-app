@@ -46,7 +46,7 @@ export default (props) => {
                                             const {userType, token} = cookie.parse(document.cookie)
                                             if (userType && token) {
                                                 let target = `/user/dashboard`;
-                                                userType == 'PretCandidate' && (target=`/user/dashboard`);
+                                                userType == 'Candidate' && (target=`/user/dashboard`);
                                                 userType == 'Institution' && (target=`/institution/dashboard`);
                                                 redirect({}, target)
                                             } else {
