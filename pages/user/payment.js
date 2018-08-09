@@ -46,10 +46,10 @@ class PaymentPage extends Component{
     render(){
         return <div>
         <CandidatePaymentsWrapper>
-          <CandidateDetailsContext.Consumer>{({price, candidate})=>{
-              const payPrice = price.pretPrice*100 //convert to kobo for payStack
-              const displayPrice = `${price.symbol}${price.pretPrice}${price.symbol ? '' : price.currency}`
-              const cancelPrice = `${price.symbol}${price.pretPrice*2}${price.symbol ? '' : price.currency}`
+          <CandidateDetailsContext.Consumer>{({pretPrice, candidate})=>{
+              const payPrice = pretPrice.pretPrice*100 //convert to kobo for payStack
+              const displayPrice = `${pretPrice.symbol}${pretPrice.pretPrice}${pretPrice.symbol ? '' : pretPrice.currency}`
+              const cancelPrice = `${pretPrice.symbol}${pretPrice.pretPrice*2}${pretPrice.symbol ? '' : pretPrice.currency}`
               return (<Fragment>
               <div style={{padding: '20px'}}>
                 <h2>Payment Page</h2><hr/>
@@ -84,7 +84,7 @@ class PaymentPage extends Component{
                           coupon={this.state.coupon}
                           email={candidate.email}
                           amount={payPrice}
-                          priceId={price._id}
+                          priceId={pretPrice._id}
                           disabled={!this.state.checked}/>
                         </CardText>
                       </div>
