@@ -41,11 +41,6 @@ export default class LeftNavigation extends Component{
                           <a>Make Payment  </a>
                         </Link>
                     </li>
-                    <li className={this.props.activePage=='/test' ? "active" : ""}>
-                        <Link prefetch href="/user/pret-test-code">
-                          <a>PRET Test Code </a>
-                        </Link>
-                    </li>
                     <li className={this.props.activePage=='/upload-cv' ? "active" : ""}>
                         <Link prefetch href="/user/upload-cv">
                         <a>Upload CV</a>

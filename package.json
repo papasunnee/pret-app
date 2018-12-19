@@ -23,7 +23,11 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-apollo": "^2.1.9",
+    "react-bootstrap": "^0.32.3",
+    "react-bootstrap-sweetalert": "^4.4.1",
     "react-dom": "^16.4.1",
+    "react-dropzone": "^4.3.0",
+    "react-dropzone-component": "^3.2.0",
     "react-swipeable-views": "^0.12.15",
     "react-toastify": "^4.1.0",
     "react-youtube": "^7.6.0"

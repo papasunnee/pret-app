@@ -24,7 +24,8 @@ class CandidatePaymentsWrapper extends Component {
   }
 
   render() {
-    return <Query query={PAYMENT_PAGE_QUERY}>
+    return <Query query={PAYMENT_PAGE_QUERY}
+      fetchPolicy="cache-and-network">
       {({loading, error, data}) => {
         if (loading)
           return <Fragment>
@@ -36,10 +37,10 @@ class CandidatePaymentsWrapper extends Component {
           return `There was an error contacting the server`;
         }
 
-        const { viewerCandidate: { candidate: { payments } } } = data;
+        const { viewerCandidate: { candidate: { payments } }, currentTime } = data;
         // console.log(candidate);
         return (
-          <CandidatePaymentsContext.Provider value={{payments}}>
+          <CandidatePaymentsContext.Provider value={{payments, currentTime}}>
             {this.props.children}
           </CandidatePaymentsContext.Provider>
         )

@@ -5,9 +5,8 @@ import withCandidatePortal from '../../hoc/candidate/withCandidatePortal'
 import PaymentButton from '../../components/CandidatePortal/PaymentButton'
 
 import Checkbox from 'material-ui/Checkbox';
-import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
+import {CardTitle, CardText} from 'material-ui/Card';
 import SvgLoader from 'bv-react-svgloader'
-import { CandidatePaymentsWrapper, CandidatePaymentsContext } from '../../contexts/CandidatePaymentsContext'
 import { CandidateDetailsContext } from '../../contexts/CandidateDetailsContext'
 import TextField from 'material-ui/TextField'
 
@@ -45,8 +44,7 @@ class PaymentPage extends Component{
     };
     render(){
         return <div>
-        <CandidatePaymentsWrapper>
-          <CandidateDetailsContext.Consumer>{({pretPrice, candidate})=>{
+          <CandidateDetailsContext.Consumer>{({candidate, pretPrice})=>{
               const payPrice = pretPrice.pretPrice*100 //convert to kobo for payStack
               const displayPrice = `${pretPrice.symbol}${pretPrice.pretPrice}${pretPrice.symbol ? '' : pretPrice.currency}`
               const cancelPrice = `${pretPrice.symbol}${pretPrice.pretPrice*2}${pretPrice.symbol ? '' : pretPrice.currency}`
@@ -85,24 +83,12 @@ class PaymentPage extends Component{
                           email={candidate.email}
                           amount={payPrice}
                           priceId={pretPrice._id}
-                          disabled={!this.state.checked}/>
+                          disabled={!this.state.checked}
+                        />
                         </CardText>
                       </div>
-                <CandidatePaymentsContext.Consumer>{
-                  ({ payments }) => <Fragment>
-                  <div>
-                    <h3>Payment History</h3><hr/>
-                    {payments.map(payment=>(
-                      <p>
-                        {payment.paystackReference} - {payment.testCode && payment.testCode.code} - {payment.createdAt}
-                      </p>
-                    ))}
-                  </div>
-                </Fragment>
-              }</CandidatePaymentsContext.Consumer>
               </Fragment>
             )}}</CandidateDetailsContext.Consumer>
-          </CandidatePaymentsWrapper>
         </div>
     }
 }

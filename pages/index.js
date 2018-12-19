@@ -11,13 +11,14 @@ class HomePage extends Component{
             <Fragment>
                 <Head>
                     <title>PRET :: Home</title>
-                    <meta charSet='utf-8' />
+                    
                     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
                 </Head>
                 <div className="container">
                     <header className="main">
                         <h2>WELCOME TO</h2>
-                        <SvgLoader src='/static/images/pret-logo.svg' className="svg-logo"/>
+                        {/* <SvgLoader src='/static/images/pret-logo.svg' className="svg-logo"/> */}
+                        <img className="img-responsive" src="/static/images/pretlogo.png" />
                     </header>
                     <main>
                         <div className="leftpane">
@@ -29,7 +30,7 @@ class HomePage extends Component{
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </p>
                         </div>
-                        <div className="enter">
+                        <div className="enter" >
                             <Link prefetch href="/candidate">
                                 <div className="enterCandidate">
                                     <h1><span>Enter as </span> CANDIDATE</h1>

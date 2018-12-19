@@ -15,9 +15,9 @@ export default class Nav extends Component {
     render() {
     return (
         <Fragment>
-            <nav>
+            <nav className="navbar navbar-light">
                 <Link prefetch href="/">
-                    <a className="navbar-brand"><SvgLoader src='/static/images/pret-logo-small.svg' className="svg-logo"/></a>
+                    <a className="navbar-brand d-inline-block align-top"><SvgLoader src='/static/images/pret-logo-small.svg'/></a>
                 </Link>
                 <ul>
                     <li>

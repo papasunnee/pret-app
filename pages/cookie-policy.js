@@ -13,7 +13,7 @@ class CookiePolicyPage extends Component{
             <Fragment>
                 <Head>
                     <title>PRET :: Cookie Policy</title>
-                    <meta charSet='utf-8' />
+                    
                     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
                 </Head>
                 <Header />

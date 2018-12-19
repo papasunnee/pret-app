@@ -13,7 +13,7 @@ class StrategicPartnersPage extends Component{
             <Fragment>
                 <Head>
                     <title>PRET :: Strategic Partners</title>
-                    <meta charSet='utf-8' />
+                    
                     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
                 </Head>
                 <Header />

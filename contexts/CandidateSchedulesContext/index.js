@@ -1,19 +1,19 @@
 import React, { Component, Fragment } from 'react'
 import { Query } from 'react-apollo'
-import { HOME_VIEWER_CANDIDATE_QUERY } from '../../lib/graphql/queries'
+import { CANDIDATE_UPCOMING_TESTS } from '../../lib/graphql/queries'
 
 import { loaderStyles } from '../../utils/styles'
 
 export {
-  CandidateDetailsContext,
-  CandidateDetailsWrapper
+  CandidateSchedulesContext,
+  CandidateSchedulesWrapper
 }
 
-const CandidateDetailsContext = React.createContext({
-  user: {}
+const CandidateSchedulesContext = React.createContext({
+  schedules: []
 });
 
-class CandidateDetailsWrapper extends Component {
+class CandidateSchedulesWrapper extends Component {
   constructor(props){
     super(props)
     // this.toggleModal= this.toggleModal.bind(this);
@@ -24,7 +24,7 @@ class CandidateDetailsWrapper extends Component {
   }
 
   render() {
-    return <Query query={HOME_VIEWER_CANDIDATE_QUERY}>
+    return <Query query={ CANDIDATE_UPCOMING_TESTS }>
       {({loading, error, data}) => {
         if (loading)
           return <Fragment>
@@ -35,14 +35,13 @@ class CandidateDetailsWrapper extends Component {
           console.log(error);
           return `There was an error contacting the server`;
         }
-
-        const { viewerCandidate: { candidate }, pretPrice } = data;
+        const { candidateUpcomingTests } = data;
         return (
-          <CandidateDetailsContext.Provider value={{ candidate, pretPrice }}>
+          <CandidateSchedulesContext.Provider value={{candidateUpcomingTests}}>
             {this.props.children}
-          </CandidateDetailsContext.Provider>
+          </CandidateSchedulesContext.Provider>
         )
-        }}
+      }}
       </Query>
   }
 }
