@@ -20,14 +20,11 @@ export default class LeftNavigation extends Component{
             <div>
                 <CandidateDetailsContext.Consumer>{
                   ({ candidate: { name } }) => <Fragment>
-                    <p>
+                    <h5 style={{fontWeight : "bold"}}>
                       {name}
-                    </p>
+                    </h5>
                   </Fragment>
                 }</CandidateDetailsContext.Consumer>
-                <h4>
-                    Candidate
-                </h4>
             </div>
             <div className="leftNav">
                 <ul>

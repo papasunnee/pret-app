@@ -1,50 +1,45 @@
-import React, {Component} from 'react';
-import Link from 'next/link'
-import SvgLoader from 'bv-react-svgloader'
-import withCandidatePortal from '../../hoc/candidate/withCandidatePortal'
+import React, { Component } from "react";
+import Link from "next/link";
+import SvgLoader from "bv-react-svgloader";
+import withCandidatePortal from "../../hoc/candidate/withCandidatePortal";
+import "./dashboard.scss";
 
-class Dashboard extends Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return <div>
-              <h2>Candidate Portal</h2>
-              <div className="displayFlex">
-                <div>
-                    <span>Make Payment</span>
-                    <SvgLoader src='/static/images/dashboard/payment.svg'/>
-                    <hr />
-                    <Link prefetch href="/user/payment">
-                        <a>Pay Now</a>
-                    </Link>
+const activities = [
+  { label: "Make Payment", link: "payment", linkLabel: "Pay Now" },
+  { label: "Receipt", link: "receipt", linkLabel: "View Receipt" },
+  { label: "Schedule Test", link: "schedule-test", linkLabel: "Schedule" },
+  { label: "Upload CV", link: "upload-cv", linkLabel: "Upload" }
+];
+
+class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row dashboardActivity">
+          {activities.map((activity, key) => {
+            return (
+              <div className="col-md-6">
+                <div className="activityContent">
+                  <img
+                    className="img-fluid d-block"
+                    src={`/static/images/dashboard/${activity.link}.png`}
+                  />
+                  <span>{activity.label}</span>
+                  <hr />
+                  <Link prefetch href={`/user/${activity.link}`}>
+                    <a className="buttonLink">{activity.linkLabel}</a>
+                  </Link>
+                  <div className="clearfix" />
                 </div>
-                <div>
-                    <span>Receipt</span>
-                    <SvgLoader src='/static/images/dashboard/receipts.svg'/>
-                    <hr />
-                    <Link prefetch href="/user/receipt">
-                        <a>Receipt</a>
-                    </Link>
-                </div>
-                <div>
-                    <span>Schedule Test</span>
-                    <SvgLoader src='/static/images/dashboard/schedule.svg'/>
-                    <hr />
-                    <Link prefetch href="/user/schedule-test">
-                        <a>Schedule</a>
-                    </Link>
-                </div>
-                <div>
-                    <span>Upload CV</span>
-                    <SvgLoader src='/static/images/dashboard/upload.svg'/>
-                    <hr />
-                    <Link prefetch href="/user/upload-cv">
-                        <a>Upload</a>
-                    </Link>
-                </div>
-            </div>
+              </div>
+            );
+          })}
         </div>
-    }
+      </div>
+    );
+  }
 }
-export default withCandidatePortal(Dashboard, {activePage: '/'})
+export default withCandidatePortal(Dashboard, { activePage: "/" });

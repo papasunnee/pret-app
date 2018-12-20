@@ -11,12 +11,8 @@ class EmployerPage extends Component {
   render() {
     return (
       <Fragment>
-        <title>PRET :: About</title>
         <Head>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
+            <title>PRET :: About</title>
         </Head>
         <Header />
         <div className="container">

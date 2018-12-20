@@ -1,4 +1,3 @@
-// import Link from 'next/link'
 import React, {Component, Fragment} from 'react'
 import { Table } from 'react-bootstrap'
 import { CandidateSchedulesWrapper, CandidateSchedulesContext } from '../../contexts/CandidateSchedulesContext'
