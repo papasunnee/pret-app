@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import withLayout2 from "../components/withLayout2";
-import SvgLoader from "bv-react-svgloader";
 import QuickNavigation from "../components/QuickNavigation";
 import Header from "../components/Header";
 import ParallaxSection from "../components/ParallaxSection";
@@ -13,10 +12,6 @@ class CandidatePage extends Component {
       <Fragment>
         <Head>
           <title>PRET :: Candidate</title>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
         </Head>
         <Header />
 

@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react'
-import Link from 'next/link'
-import SvgLoader from 'bv-react-svgloader'
 import Nav from './Nav';
 
 export default class Header extends Component {

@@ -8,6 +8,7 @@ body {
   font-family: "Montserrat", sans-serif;
   background: #ffffff;
   margin: 0;
+  box-sizing: border-box;
 }
 h1,
 h2,
@@ -81,8 +82,7 @@ nav a.navbar-brand {
 
 nav ul {
   border-radius: 50px;
-  display: flex;
-  padding: 15px;
+  padding: 0px 25px !important;
   -webkit-box-shadow: 3px 2px 14px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 3px 2px 14px 0px rgba(0, 0, 0, 0.3);
   box-shadow: 3px 2px 14px 0px rgba(0, 0, 0, 0.3);
@@ -410,7 +410,6 @@ footer p a {
   main {
     display: block;
     position: relative;
-    border: 1px solid red;
   }
 
   .main img.img-responsive {
@@ -424,6 +423,22 @@ footer p a {
     padding: 20px;
     width: 80%;
     margin: 40px auto;
+  }
+}
+@media (max-width: 587px) {
+  footer {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-top: 50px;
+  }
+  footer ul {
+    display: block;
+    width: 100%;
+    margin: 30px auto;
+    margin-bottom: 0;
+    padding: 0;
+    justify-content: space-between;
   }
 }
 @media (max-width: 768px) {
@@ -441,15 +456,24 @@ footer p a {
     width: 80%;
     margin: 40px auto;
   }
+  .wrapper {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: 100% auto;
+    position: relative;
+    background-image: url("/static/images/sectionbg.jpg");
+    -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    padding-bottom: 40px;
+    padding-top: 200px;
+  }
 }
 @media (min-width: 768px) {
   .container {
     width: 750px;
   }
-  /* .displayFlex {
-    display: block;
-    width: 100%;
-  } */
 }
 @media (max-width: 714px) {
   nav ul {

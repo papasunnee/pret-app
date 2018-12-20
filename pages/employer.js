@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Head from "next/head";
+import Link from "next/head";
 import ParallaxSection from "../components/ParallaxSection";
 import withLayout2 from "../components/withLayout2";
 import SvgLoader from "bv-react-svgloader";
@@ -12,15 +13,10 @@ class EmployerPage extends Component {
       <Fragment>
         <Head>
           <title>PRET :: Employer</title>
-          
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
         </Head>
         <Header />
         <div className="container">
-          <main style={{ height: "400px" }}>
+          <main>
             <div className="leftpane">
               <h2 className="themeColor">Let's Get Started</h2>
               <p>
@@ -85,22 +81,26 @@ class EmployerPage extends Component {
                 </p>
               </div>
               <div className="col-md-6">
-                <img src="/static/images/employer3.png" />
+                <img className="img-fluid" src="/static/images/employer3.png" />
               </div>
-              <div className="row">
-                <div className="col-md-2">
-                  <SvgLoader
-                    src="/static/images/pret-symbol.svg"
-                    className="svg-logo"
-                  />
-                </div>
-                <div className="col-md-8 col-md-offset-2">
-                  <h2 style={{ color: "#308F13" }}>
+            </div>
+            <div className="row">
+              <div
+                className="col-md-12"
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <img
+                  className="img-fluid float-left"
+                  src="/static/images/pret-symbol.png"
+                />
+                <p>
+                  <a>
                     REGISTER FOR PRET, OBTAIN AN ACCESS CODE AND BE ABLE TO
                     VERIFY AND COMPARE PRET SCORES OF YOUR JOB APPLICANTS
                     ANYTIME
-                  </h2>
-                </div>
+                  </a>
+                </p>
+                <div className="clearfix" />
               </div>
             </div>
             <QuickNavigation />
