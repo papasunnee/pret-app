@@ -20,7 +20,7 @@ export default class UploadZone extends Component {
   verifyFile = files => {
     if (files && files.length > 0) {
       const currentFile = files[0];
-      console.log(currentFile);
+      // console.log(currentFile);
       const currentFileType = currentFile.type;
       const currentFileSize = currentFile.size;
       if (currentFileSize > imageMaxSize) {

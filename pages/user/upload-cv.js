@@ -21,7 +21,7 @@ class UploadCvPage extends Component {
   };
 
   onUploadCompleted = data => {
-    console.log(data);
+    console.log('uploaded');
   };
 
   onUploadError = error => {
@@ -49,7 +49,7 @@ class UploadCvPage extends Component {
     }, 3000);
 
     const formData = new FormData();
-    console.log("this.state.fileSrc", this.state.fileSrc);
+    // console.log("this.state.fileSrc", this.state.fileSrc);
     formData.append("file", this.state.fileSrc);
     formData.append(
       "upload_preset",
@@ -65,11 +65,35 @@ class UploadCvPage extends Component {
         formData
       );
 
-      //   runMutation({
-      //     variables: {
-      //       ...response.data
-      //     }
-      //   });
+      const {
+        format,
+        height,
+        public_id,
+        resource_type,
+        secure_url,
+        signature,
+        url,
+        version,
+        width
+      } = response.data;
+
+        runMutation({
+          variables: {
+            record: {
+              cvFile: {
+                format,
+                height,
+                public_id,
+                resource_type,
+                secure_url,
+                signature,
+                url,
+                version,
+                width
+              }
+            }
+          }
+        });
     } catch (e) {
       // this.setState({ isBusy: false });
       console.log(e);
