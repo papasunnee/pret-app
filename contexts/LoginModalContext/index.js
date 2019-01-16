@@ -30,7 +30,7 @@ class LoginModalWrapper extends Component {
       value: 1,
       slideIndex: 0,
       registerType : 0,
-      // REGISTER_TYPES : ['Candidate' , 'Institution', 'Career Adviser'],
+      // REGISTER_TYPES : ['Candidate' , 'Employer', 'Career Adviser'],
       REGISTER_TYPES : ['Candidate' , 'Employer'],
       toggleModal: this.toggleModal,
       handleTabChange: this.handleTabChange,

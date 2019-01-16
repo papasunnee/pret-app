@@ -67,7 +67,7 @@ export default class Nav extends Component {
                       <ApolloConsumer>
                         {client => (
                           <a
-                            href="#!"
+                            // href="#!"
                             className="nav-link"
                             onClick={async () => {
                               const {
@@ -81,11 +81,9 @@ export default class Nav extends Component {
                                   document.cookie
                                 );
                                 if (userType && token) {
-                                  let target = `/user/dashboard`;
-                                  userType == "PretCandidate" &&
-                                    (target = `/user/dashboard`);
-                                  userType == "Institution" &&
-                                    (target = `/institution/dashboard`);
+                                  let target = "/user/dashboard";
+                                  if (userType == "Candidate") target = "/user/dashboard";
+                                  if (userType == "Employer") target = "/institution/dashboard";
                                   redirect({}, target);
                                 } else {
                                   toggleModal();

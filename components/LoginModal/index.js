@@ -177,7 +177,7 @@ export default class CandidateModal extends React.Component {
                           errorText=''
                           value={this.state.regFullname}
                           onChange={(e) => this.setState({regFullname : e.target.value})}
-                          floatingLabelText={registerType == 0 ? 'Fullname' : registerType == 1 ? 'Institution Name'  : 'Adviser Fullname'}
+                          floatingLabelText={registerType == 0 ? 'Fullname' : registerType == 1 ? 'Employer Name'  : 'Adviser Fullname'}
                           type="text"
                         />
                         <TextField

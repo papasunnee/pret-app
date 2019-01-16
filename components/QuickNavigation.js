@@ -57,7 +57,7 @@ export default props => {
                                   let target = `/user/dashboard`;
                                   userType == "Candidate" &&
                                     (target = `/user/dashboard`);
-                                  userType == "Institution" &&
+                                  userType == "Employer" &&
                                     (target = `/institution/dashboard`);
                                   redirect({}, target);
                                 } else {

@@ -31,8 +31,8 @@ class LoginButton extends Component {
       // const target = this.props.url.query.from || `/user/dashboard`;
       let target = `/user/dashboard`;
       userType == "Candidate" && (target = `/user/dashboard`);
-      userType == "Institution" && (target = `/institution/dashboard`);
-      userType == "MccAffiliate" && (target = `/affiliate/dashboard`);
+      userType == "Employer" && (target = `/institution/dashboard`);
+      userType == "PretAffiliate" && (target = `/affiliate/dashboard`);
       redirect({}, target);
     });
   };
@@ -46,10 +46,10 @@ class LoginButton extends Component {
     error.graphQLErrors.forEach(error => {
       switch (error.message) {
         case `password incorrect`:
-          this.props.showLoginError("Incorrectw Login Details");
+          this.props.showLoginError("Incorrect Login Details");
           break;
         case `email/user not found`:
-          this.props.showLoginError("Incorrects Login Details");
+          this.props.showLoginError("Incorrect Login Details");
           break;
         default:
           this.props.showLoginError("Please Try Again Later");

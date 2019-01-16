@@ -26,10 +26,10 @@ export default withApollo(
          })
        }
        // TODO
-      if (REGISTER_TYPES[registerType]=='Institution') {
+      if (REGISTER_TYPES[registerType]=='Employer') {
          user=data.institutionCreateAccount;
          target = `/institution/dashboard`;
-         document.cookie = cookie.serialize('userType', 'Institution', {
+         document.cookie = cookie.serialize('userType', 'Employer', {
            maxAge: 30 * 24 * 60 * 60 // 30 days
          })
        }
@@ -88,7 +88,7 @@ export default withApollo(
         email: regEmail,
         password: regPassword
       });
-      doRegistrationAs=='Institution' && (variables={
+      doRegistrationAs=='Employer' && (variables={
         name: regFullname,
         email: regEmail,
         password: regPassword
@@ -116,7 +116,7 @@ export default withApollo(
       // console.log(REGISTER_TYPES[registerType]);
       let mutation = SIGNUP_CANDIDATE_MUTATION;
       REGISTER_TYPES[registerType]=='Candidate' && (mutation=SIGNUP_CANDIDATE_MUTATION);
-      REGISTER_TYPES[registerType]=='Institution' && (mutation=SIGNUP_INSTITUTION_MUTATION);
+      REGISTER_TYPES[registerType]=='Employer' && (mutation=SIGNUP_INSTITUTION_MUTATION);
       // REGISTER_TYPES[registerType]=='Career Adviser' && (mutation=LOGIN_USER_MUTATION);
 
       return <Mutation mutation={mutation}

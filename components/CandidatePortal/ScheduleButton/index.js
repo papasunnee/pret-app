@@ -41,7 +41,7 @@ class ScheduleButton extends Component{
     //   // const target = this.props.url.query.from || `/user/dashboard`
     //   let target = `/user/dashboard`;
     //   userType == 'Candidate' && (target=`/user/dashboard`);
-    //   userType == 'Institution' && (target=`/institution/dashboard`);
+    //   userType == 'Employer' && (target=`/institution/dashboard`);
     //   userType == 'MccAffiliate' && (target=`/affiliate/dashboard`);
     //   redirect({}, target)
     // })
