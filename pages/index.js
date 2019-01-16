@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import withLayout from '../components/withLayout'
-import SvgLoader from 'bv-react-svgloader'
 
 
 class HomePage extends Component{
